@@ -2,10 +2,10 @@
     {
         "url": "www.google.com",
         "price": 1000,
-        "name": "laptop name",
-        "description": "laptop description",
+        "name": "Mac",
+        "description": "laptop description...",
         "platform": "macos",
-        "purpose": "web browsing",
+        "purpose": "navegar en internet",
         "brand": "apple"
     }
 ]

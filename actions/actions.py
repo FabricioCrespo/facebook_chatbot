@@ -12,7 +12,7 @@ def select_laptop(price: int, purpose: Optional[str], brand: Optional[List[str]]
     laptops = [x for x in laptops if x['price'] <= price]
     if purpose:
         laptops = [x for x in laptops if x['purpose'].lower() == purpose]
-    if brand and 'no preference' not in brand:
+    if brand and 'no tengo preferencia' not in brand:
         laptops = [x for x in laptops if x['brand'] in brand]
     return laptops
 
