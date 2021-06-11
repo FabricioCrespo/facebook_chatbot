@@ -21,8 +21,8 @@ slots:
   purpose:
     type: categorical
     values:
-      - web browsing
-      - productivity
+      - navegar en internet
+      - productividad
       - gaming
     influence_conversation: true
 responses:
@@ -40,7 +40,7 @@ responses:
     - text: Para que vas a utilizar principalmente tu laptop?
       buttons:
       - title: navegar en internet
-        payload: /select_purpose{{"purpose":"navegar en internet"}}
+        payload: /select_purpose{{"purpose":"navegar en internet"}} # Setea el slot ['purpose'] del diccionario slots con la opción seleccionada (clic)
       - title: productividad
         payload: /select_purpose{{"purpose":"productividad"}}
       - title: gaming
