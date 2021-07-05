@@ -25,4 +25,11 @@ share/python-wheels/
 .installed.cfg
 *.egg
 
-env/
+env/*
+__pycache__/
+__pycache__
+.ipynb_checkpoints/
+Untitled-checkpoint.ipynb
+.ipynb_checkpoints
+actions/__pycache__/__init__.cpython-38.pyc
+actions/__pycache__/actions.cpython-38.pyc
