@@ -6,7 +6,7 @@ stories:
   - intent: greet
   - action: action_greet
   - intent: select_price
-  - action: action_select_upper_price
+  - action: action_select_service
   - intent: select_purpose
   - action: action_select_purpose
   - intent: select_brand

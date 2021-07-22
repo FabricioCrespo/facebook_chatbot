@@ -27,3 +27,8 @@ rules:
   steps:
     - intent: select_purpose
     - action: action_select_purpose
+
+- rule: grab service
+  steps:
+    - intent: select_service
+    - action: action_select_service

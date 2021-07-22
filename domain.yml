@@ -25,6 +25,14 @@ slots:
       - productividad
       - gaming
     influence_conversation: true
+  service:
+    type: categorical
+    values:
+      - Marketing digital
+      - Página web
+      - Aplicaciones móviles
+    influence_conversation: true
+        
 responses:
   utter_greet:
     - text: Hola, me llamo Saturnito-bot. Estoy aquí para ayudarte a elegir una laptop ideal para ti =).
@@ -47,6 +55,16 @@ responses:
         payload: /select_purpose{{"purpose":"gaming"}}
   utter_no_recommendations:
     - text: Lo siento, no tengo una sugerencia para ti en este momento.
+  utter_service:
+    - text: Estos son los servicios que ofrecemos
+      buttons:
+      - title: Marketing digital
+        payload: /select_service{{"service":"Marketing digital"}} # Setea el slot ['purpose'] del diccionario slots con la opción seleccionada (clic)
+      - title: Página web
+        payload: /select_service{{"service":"Página web"}}
+      - title: Aplicaciones móviles
+        payload: /select_service{{"service":"Aplicaciones móviles"}}
+    
 actions:
   - action_greet
   - action_select_upper_price
@@ -54,3 +72,4 @@ actions:
   - action_select_brand
   - action_select_purpose
   - action_recommend_laptop
+  - action_select_service

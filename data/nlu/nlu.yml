@@ -73,4 +73,10 @@ nlu:
     - gaming
     - productividad
     - navegar en internet
+- intent: select_service
+  examples: |
+    - Marketing digital
+    - Página web
+    - Aplicaciones móviles
+
 

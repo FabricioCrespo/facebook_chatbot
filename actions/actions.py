@@ -50,11 +50,22 @@ class ActionSelectPrice(Action):
         extracted_price = self.extract_price(upper_price) #Se aplica el metodo extract_price para extraer el precio del mensaje
         if extracted_price != -1:
             dispatcher.utter_message(text=f'I will look for a laptop under ${extracted_price}.')
-            dispatcher.utter_message(template='utter_purpose') #Devuelve los botones configurados en domain.yml - utter_purpose
+            dispatcher.utter_message(template='utter_service') #Devuelve los botones configurados en domain.yml - utter_purpose
             return [SlotSet('upper_price', extracted_price)] #Guarda el precio extraido en el slot extracted_price establecido en domain.yml
         else:
             dispatcher.utter_message(template='utter_default') #Si no se encontro un valor entero en el string, devuelve un mensaje por default
             return []
+
+class ActionSelectService(Action):
+    def name(self) -> Text:
+        return 'action_select_service'
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(template='utter_service') #Devuelve el mensaje pre-definido en domain.yml en la seccion de responses.
+        #dispatcher.utter_message(template='utter_price') #Devuelve el mensaje pre-definido en domain.yml en la seccion de responses.
+        return []
 
 class ActionSelectPurpose(Action):
     def name(self) -> Text:
