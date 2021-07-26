@@ -46,6 +46,7 @@ class ActionGreet(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(template='utter_greet')
         dispatcher.utter_message(template='utter_menu') #Devuelve el mensaje pre-definido en domain.yml en la seccion de responses.
         return []
 

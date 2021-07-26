@@ -120,7 +120,7 @@ responses:
       - title: WhatsApp
         payload: /select_topin{{"topin":"WhatsApp"}} # Setea el slot ['purpose'] del diccionario slots con la opción seleccionada (clic)
       - title: Citas
-        payload: /select_topic{{"topin":"Citas"}}
+        payload: /select_topin{{"topin":"Citas"}}
       - title: Banner
         payload: /select_topin{{"topin":"Banner"}}
       - title: Cotizar
