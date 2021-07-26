@@ -27,3 +27,28 @@ rules:
   steps:
     - intent: select_purpose
     - action: action_select_purpose
+
+- rule: grab menu
+  steps:
+    - intent: select_menu
+    - action: action_select_menu
+
+- rule: grab service
+  steps:
+    - intent: select_service
+    - action: action_select_service
+
+- rule: grab plan
+  steps:
+    - intent: select_plan
+    - action: action_select_plan
+
+- rule: grab topin
+  steps:
+    - intent: select_topin
+    - action: action_select_topin
+
+- rule: grab contacto
+  steps:
+    - intent: select_contacto
+    - action: action_select_contacto

@@ -11,6 +11,11 @@ intents:
   - select_purpose
   - affirm
   - deny
+  - select_menu
+  - select_service
+  - select_plan
+  - select_topin
+  - select_contacto
 slots:
   upper_price:
     type: text
@@ -24,6 +29,42 @@ slots:
       - navegar en internet
       - productividad
       - gaming
+    influence_conversation: true
+  menu:
+    type: categorical
+    values:
+      - Servicios
+      - Planifiquemos mi página web
+      - Comunicarse con un representante
+    influence_conversation: true
+  service:
+    type: categorical
+    values:
+      - Marketing Digital
+      - Websites
+      - Apps
+    influence_conversation: true
+  plan:
+    type: categorical
+    values:
+      - Básico
+      - Medio
+      - Business
+    influence_conversation: true
+  topin:
+    type: categorical
+    values:
+      - WhatsApp
+      - Citas
+      - Banner
+      - Cotizar
+    influence_conversation: true
+  contacto:
+    type: categorical
+    values:
+      - WhatsApp
+      - Messenger
+      - Llamada
     influence_conversation: true
 responses:
   utter_greet:
@@ -45,8 +86,72 @@ responses:
         payload: /select_purpose{{"purpose":"productividad"}}
       - title: gaming
         payload: /select_purpose{{"purpose":"gaming"}}
+  utter_menu:
+    - text: Como te puedo ayudar?
+      buttons:
+      - title: Servicios
+        payload: /select_menu{{"menu":"Servicios"}} # Setea el slot ['purpose'] del diccionario slots con la opción seleccionada (clic)
+      - title: Planifiquemos mi página web
+        payload: /select_menu{{"menu":"Planifiquemos mi página web"}}
+      - title: Comunicarse con un representante
+        payload: /select_menu{{"menu":"Comunicarse con un representante"}}
+
+  utter_servicios_menu:
+    - text: Muy bien! Estos son nuestros servicios.
+      buttons:
+      - title: Marketing Digital
+        payload: /select_service{{"service":"Marketing Digital"}} # Setea el slot ['purpose'] del diccionario slots con la opción seleccionada (clic)
+      - title: Websites
+        payload: /select_service{{"service":"Websites"}}
+      - title: Apps
+        payload: /select_service{{"service":"Apps"}}
+  utter_website_plan:
+    - text: Por favor, selecciona un plan.
+      buttons:
+      - title: Básico
+        payload: /select_plan{{"plan":"Básico"}} # Setea el slot ['purpose'] del diccionario slots con la opción seleccionada (clic)
+      - title: Medio
+        payload: /select_plan{{"plan":"Medio"}}
+      - title: Business
+        payload: /select_plan{{"plan":"Business"}}
+  utter_topins:
+    - text: Selec topins que necesites. Para calcular el precio total selecciona Cotizar.
+      buttons:
+      - title: WhatsApp
+        payload: /select_topin{{"topin":"WhatsApp"}} # Setea el slot ['purpose'] del diccionario slots con la opción seleccionada (clic)
+      - title: Citas
+        payload: /select_topic{{"topin":"Citas"}}
+      - title: Banner
+        payload: /select_topin{{"topin":"Banner"}}
+      - title: Cotizar
+        payload: /select_topin{{"topin":"Cotizar"}}
+  utter_contacto_menu:
+    - text: Por favor, selecciona una forma de contacto.
+      buttons:
+      - title: WhatsApp
+        payload: /select_contacto{{"contacto":"WhatsApp"}} # Setea el slot ['purpose'] del diccionario slots con la opción seleccionada (clic)
+      - title: Messenger
+        payload: /select_contacto{{"contacto":"Messenger"}}
+      - title: Llamada
+        payload: /select_contacto{{"contacto":"Llamada"}}
+  
   utter_no_recommendations:
     - text: Lo siento, no tengo una sugerencia para ti en este momento.
+  utter_marketing:
+    - text: Marketing Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sem libero. Donec sit amet tellus aliquet, feugiat enim at, elementum lacus. Donec bibendum dui id orci mattis commodo. Etiam ante odio, ornare vitae sagittis non, mollis sit amet lacus. Duis dui est, rutrum convallis consectetur sit amet, accumsan sit amet nisl. Aliquam eget est nec dui viverra vestibulum ut a augue. In suscipit tempor nulla, sed ultricies felis finibus a. Praesent facilisis, mi ut bibendum vulputate, tortor ipsum porta nunc, at porttitor quam dolor at mauris. Aliquam in mi sit amet orci varius efficitur. Nunc vestibulum eget enim at aliquam. Phasellus faucibus risus eu consequat volutpat.
+  utter_websites:
+    - text: Websites Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sem libero. Donec sit amet tellus aliquet, feugiat enim at, elementum lacus. Donec bibendum dui id orci mattis commodo. Etiam ante odio, ornare vitae sagittis non, mollis sit amet lacus. Duis dui est, rutrum convallis consectetur sit amet, accumsan sit amet nisl. Aliquam eget est nec dui viverra vestibulum ut a augue. In suscipit tempor nulla, sed ultricies felis finibus a. Praesent facilisis, mi ut bibendum vulputate, tortor ipsum porta nunc, at porttitor quam dolor at mauris. Aliquam in mi sit amet orci varius efficitur. Nunc vestibulum eget enim at aliquam. Phasellus faucibus risus eu consequat volutpat.
+  utter_apps:
+    - text: Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sem libero. Donec sit amet tellus aliquet, feugiat enim at, elementum lacus. Donec bibendum dui id orci mattis commodo. Etiam ante odio, ornare vitae sagittis non, mollis sit amet lacus. Duis dui est, rutrum convallis consectetur sit amet, accumsan sit amet nisl. Aliquam eget est nec dui viverra vestibulum ut a augue. In suscipit tempor nulla, sed ultricies felis finibus a. Praesent facilisis, mi ut bibendum vulputate, tortor ipsum porta nunc, at porttitor quam dolor at mauris. Aliquam in mi sit amet orci varius efficitur. Nunc vestibulum eget enim at aliquam. Phasellus faucibus risus eu consequat volutpat.
+  utter_whatsapp:
+    - text: El siguiente link te contactará con uno de nuestros representantes https://api.whatsapp.com/send?phone=593959076697&text=Hola,%20necesito%20una%20asesor%C3%ADa!.
+  utter_messenger:
+    - text: Gracias! Muy pronto un representante de Saturno ser contactará contigo. 
+  utter_llamada:
+    - text: Gracias! Escribe tu número de celular o fijo anteponiendo el código de provincia y muy pronto un representante de Saturno se contactará contigo.
+  utter_exist_topin:
+    - text: Ya has seleccionado este topin!. Selecciona otro o click en 'Cotizar' para calcular el precio final.
+
 actions:
   - action_greet
   - action_select_upper_price
@@ -54,3 +159,9 @@ actions:
   - action_select_brand
   - action_select_purpose
   - action_recommend_laptop
+  - action_select_menu
+  - action_select_service
+  - action_select_contacto
+  - action_select_website
+  - action_select_plan
+  - action_select_topin

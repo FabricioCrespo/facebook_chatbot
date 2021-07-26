@@ -37,3 +37,7 @@ curl --request POST \
   --url http://localhost:5005/webhooks/rest/webhook \
   --header 'content-type: application/json' \
   --data '{"sender": "sender_id", "message": "hi"}'
+
+## Activate Ngrok
+
+`./ngrok http 5005 ` (Esta en downloads)

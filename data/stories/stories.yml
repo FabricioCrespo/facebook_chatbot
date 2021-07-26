@@ -5,6 +5,16 @@ stories:
   steps:
   - intent: greet
   - action: action_greet
+  - intent: select_menu
+  - action: action_select_menu
+  - intent: select_service
+  - action: action_select_service
+  - intent: select_plan
+  - action: action_select_plan
+  - intent: select_topin
+  - action: action_select_topin
+  - intent: select_contacto
+  - action: action_select_contacto
   - intent: select_price
   - action: action_select_upper_price
   - intent: select_purpose
